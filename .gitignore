@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+*.local
+*.log
+.DS_Store
+
+/src/assets/images/classroom-coordinator.webp
+/src/assets/images/crm-roles-preview.webp
+/src/assets/images/online-learning.webp

@@ -1,0 +1,145 @@
+.login-page {
+  --page-width:1440px;
+  --gutter:clamp(16px,4vw,64px);
+  background:#f3f5f8;
+}
+.login-brand { width:min(100%,var(--page-width));margin-inline:auto;padding-inline:var(--gutter) }
+.login-brand .brand img { filter:contrast(1.02);mix-blend-mode:multiply }
+.shell { --head-inset:28px;background:#f3f5f8 }
+@media (min-width:781px) {
+  .shell .topbar { padding-inline-end:calc(var(--directory-inset) + var(--head-inset) + max(0px, (100% - var(--directory-width)) / 2)) }
+}
+.shell .sidebar { background:#fff; border-right:1px solid var(--border-subtle) }
+.sidebar .brand { color:var(--text) }
+.sidebar-product { color:var(--brand-blue) }
+.sidebar .nav-label { color:var(--text-secondary);border-color:var(--border-subtle) }
+.sidebar nav a { color:#384e6a }
+.sidebar nav a[aria-current=page] { background:#193b64;color:white }
+.sidebar nav a:not([aria-current]):hover { background:#eef3f9;color:var(--brand-blue) }
+.sidebar :focus-visible { outline-color:var(--brand-blue) }
+.directory-head {
+  isolation:isolate;position:relative;overflow:hidden;flex:none;
+  padding:24px var(--head-inset) 20px;margin-bottom:18px;
+  color:white;background:#173761;border-radius:16px;
+}
+.directory-art { position:absolute;z-index:-1;inset:0 0 0 auto;width:min(35%,420px);overflow:hidden;pointer-events:none }
+.directory-art .brand-steps { opacity:.32 }
+.directory-art .brand-steps i { height:58%;width:63% }
+.directory-title { display:flex;gap:16px;align-items:center;justify-content:space-between }
+.directory-title h1 { font-size:40px;line-height:1.12;letter-spacing:-.035em }
+.directory-title .primary { flex:none;background:white;color:#173761 }
+.directory-title .primary:hover { background:#e5effa }
+.directory-head .status-tabs { width:fit-content;margin-top:18px;background:transparent;padding:2px;gap:8px }
+.directory-head .status-tabs button { min-height:34px;color:white;background:#284b72 }
+.directory-head .status-tabs button[aria-pressed=true] { background:white;color:#16375e;box-shadow:none }
+.directory-head .status-tabs button:not([aria-pressed=true]):hover { background:#3b5e85 }
+.directory-head .status-tabs button span {
+  display:inline-grid;place-items:center;min-height:18px;
+  padding:1px 5px 0;line-height:1;background:#17395c;border-radius:4px;
+}
+.directory-head .status-tabs button[aria-pressed=true] span { background:#e8eff8 }
+.directory-head button:focus-visible { outline:2px solid #90b9ec }
+.directory-tools { display:flex;align-items:center;gap:10px;flex:none;padding:16px 20px }
+.directory-tools .search { max-width:400px;min-width:0 }
+.directory-tools .search input { background:#f6f8fb }
+.directory-tools .secondary { margin-inline-start:auto;font-size:14px }
+.clear-filters { display:inline-flex;align-items:center;gap:4px;color:var(--brand-blue);min-height:36px }
+.shell .data-panel th { background:#f0f4f8;color:#445971 }
+.shell .table-scroll .icon-btn { border:1px solid var(--border-subtle);background:white }
+.shell .staff-table td { height:74px }
+.shell .row-name strong { color:#142e52;font-size:16px }
+.shell .staff-table .avatar { width:44px;height:44px;border-radius:50%;font-size:15px }
+.shell .role-tags { gap:6px }
+.shell .role-tags span { padding:4px 8px;background:#eef3fa;color:#344f73;font-size:13px }
+.shell .pager { background:#fbfcfe }
+.shell .table-scroll:focus-visible { outline-offset:-2px }
+.record-panel { margin:auto }
+.record-panel .modal-head { align-items:flex-start; padding:24px; background:#eff4fa }
+.record-panel .modal-head h2 { color:#142e52; overflow-wrap:anywhere; letter-spacing:-.025em }
+.record-panel .modal-head small { color:var(--text-secondary) }
+.record-panel form { min-height:0 }
+.record-panel .modal-scroll { min-height:0;padding:24px }
+.record-panel .modal-foot { background:#f8fafc }
+.record-panel .tabs { background:white; border-bottom:1px solid var(--border-subtle);border-radius:0;gap:10px;padding:0 }
+.record-panel .tabs button { border-radius:0;border-bottom:2px solid transparent;min-height:44px }
+.record-panel .tabs button[aria-pressed=true] { box-shadow:none;border-bottom-color:var(--brand-blue);font-weight:650 }
+.list-settings .modal-head { background:#eff4fa }
+.list-settings .filter-box { gap:18px }
+.permission-group legend { color:#173761 }
+
+.login-page { display:flex;flex-direction:column;align-items:center }
+.login-brand { min-height:72px;align-self:auto;flex:none }
+.auth-stage {
+  display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);align-items:stretch;
+  width:min(900px,calc(100% - 2 * var(--gutter))); max-height:calc(100% - 96px);
+  min-height:0; margin:auto; overflow:hidden; background:white;
+  border:1px solid var(--border-subtle);border-radius:20px;
+}
+.auth-art { background:#173761;position:relative;overflow:hidden;min-height:0 }
+.brand-steps { position:absolute;inset:0;display:grid;place-items:center;transform:skewY(-18deg) }
+.brand-steps i { grid-area:1/1;height:32%;width:66%;border-radius:12px;background:#4277aa;transform:translate(-41%,65%) }
+.brand-steps i:nth-child(2) { background:#80a9cf;transform:translate(3%,0) }
+.brand-steps i:nth-child(3) { background:#c4def0;transform:translate(48%,-65%) }
+.auth-stage .login-form {
+  box-sizing:border-box;align-self:center;justify-self:center;
+  width:min(100%, 408px); max-height:100%;margin:0;padding:48px clamp(20px,3vw,44px);
+}
+.auth-stage h1 { font-size:32px;line-height:1.12;letter-spacing:-.035em;color:#142e52 }
+.auth-stage .submit { justify-content:center }
+.auth-stage .recovery-result { line-height:1.55 }
+
+@media (max-width:780px) {
+  .directory-head { --head-inset:18px;padding-block:15px;margin-bottom:12px }
+  .directory-title h1 { font-size:30px }
+  .shell { grid-template-columns:54px minmax(0,1fr);grid-template-rows:minmax(0,1fr) }
+  .sidebar { padding:9px 4px;border:0;align-items:center;flex-direction:column;gap:0 }
+  .sidebar .brand { padding:0 }
+  .sidebar .brand > span,.sidebar nav a > span,.sidebar .nav-label {
+    display:block;position:absolute;width:1px;height:1px;clip-path:inset(50%);overflow:hidden
+  }
+  .sidebar nav { display:grid;gap:6px;margin:16px 0 0 }
+  .sidebar nav a { display:grid;place-items:center;grid-template-columns:1fr;width:44px;height:44px;padding:0 }
+  .table-scroll table { min-width:720px }
+}
+@media (max-width:600px) {
+  .content { --directory-inset:8px }
+  .directory-head { --head-inset:10px;border-radius:12px }
+  .directory-title { gap:6px }
+  .directory-title h1 { font-size:24px }
+  .directory-title .primary { min-height:36px;padding:6px 9px;gap:4px;font-size:12px }
+  .directory-title .add-subject { display:none }
+  .directory-head .status-tabs { margin-top:10px;gap:6px }
+  .directory-tools { gap:6px;padding:9px }
+  .directory-tools .secondary,.directory-tools .clear-filters { width:38px;padding:0;justify-content:center;flex:none }
+  .directory-tools .secondary span,.clear-filters span { display:none }
+  .record-panel .modal-head,.record-panel .modal-scroll { padding:16px }
+  .login-page { --gutter:12px }
+  .auth-stage { grid-template-columns:minmax(0,1fr);width:min(400px,calc(100% - 24px));border-radius:14px }
+  .auth-art { display:none }
+  .auth-stage .login-form { padding:28px 20px }
+}
+@media (max-width:400px) {
+  .shell { grid-template-columns:46px minmax(0,1fr) }
+  .sidebar nav a { width:38px }
+  .shell .list-controls { padding:8px }
+  .status-tabs button { padding-inline:4px;font-size:12px;gap:3px }
+  .status-tabs button span { padding-inline:0 }
+  .directory-head .status-tabs button { padding-inline:3px }
+  .directory-head .status-tabs button span { padding-inline:2px }
+  .shell .pager { padding-inline:6px;gap:2px }
+}
+@media (max-height:550px) {
+  .directory-head { padding-block:6px;margin-bottom:6px }
+  .directory-head .status-tabs { margin-top:3px }
+  .directory-title h1 { font-size:23px }
+  .directory-tools { padding-block:5px }
+  .login-brand { min-height:42px }
+  .login-brand .brand img { width:32px;height:32px }
+  .auth-stage { max-height:calc(100% - 46px) }
+  .auth-stage .login-form { padding-block:12px }
+}
+@media (max-width:340px) {
+  .directory-head { --head-inset:6px }
+  .directory-head .status-tabs { padding-inline:0;gap:5px }
+  .directory-head .status-tabs button span { padding-inline:1px }
+}

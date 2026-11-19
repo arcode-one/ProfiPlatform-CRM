@@ -1,0 +1,12 @@
+:root {
+  --brand-blue: #1c4d90;
+  --text: #08113f;
+  --text-secondary: #425771;
+  --surface: #ffffff;
+  --surface-tinted: #eef4fb;
+  --border-subtle: #d4dfec;
+  --focus: #78899f;
+  --font-family: 'Onest Variable', 'Segoe UI', sans-serif;
+  --radius-control: 0.625rem;
+  --radius-panel: 1rem;
+}
